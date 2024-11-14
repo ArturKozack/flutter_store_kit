@@ -19,7 +19,6 @@
 
 import 'dart:async';
 import 'package:flutter/foundation.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter_inapp_purchase/flutter_inapp_purchase.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'listener_manager.dart';
@@ -112,9 +111,9 @@ class StoreKit {
   List<IAPItem> get subscriptionItems => _subscriptionManager.subscriptionItems;
 
   // Restores past purchases for the user.
-  Future<void> restorePastPurchases(BuildContext context) async {
+  Future<void> restorePastPurchases() async {
     // Restore past purchases using the SubscriptionManager.
-    await _subscriptionManager.restorePastPurchases(context, _listenerManager);
+    await _subscriptionManager.restorePastPurchases( _listenerManager);
   }
 
   // Purchases a subscription item.

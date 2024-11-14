@@ -22,7 +22,6 @@ import 'dart:developer';
 import 'dart:io';
 import 'dart:convert';
 import 'package:flutter/foundation.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter_inapp_purchase/flutter_inapp_purchase.dart';
 import 'package:flutter_store_kit/utils/purchase_handler.dart';
 
@@ -73,8 +72,7 @@ class SubscriptionManager {
   }
 
   // A method to restore past purchases and update the pro status.
-  Future<void> restorePastPurchases(
-      BuildContext context, ListenerManager listenerManager) async {
+  Future<void> restorePastPurchases(ListenerManager listenerManager) async {
     try {
       // Get a list of available purchases from the store.
       await FlutterInappPurchase.instance
